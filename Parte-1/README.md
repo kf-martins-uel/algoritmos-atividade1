@@ -2,6 +2,10 @@
 
 1. Elaborar um algoritmo para calcular a média aritmética de 2 notas escolares de um
 aluno e escrever as notas e a média calculada.
+
+    - Diagrama: </br>
+    <img src="/Parte-1/atividade1.png"/>
+
 2. Elaborar um algoritmo para calcular a área de uma circunferência, e apresentar a
 medida da área calculada. Sabendo-se que: A= πr2 , onde A é a variável que conterá
 o cálculo da área π é o valor de pi (3,14159) e r é o valor do raio.

@@ -24,4 +24,4 @@ flowchart LR
 
 > Kauã Felipe Martins
 
->>mermeid version: v11.4.1
+>>mermaid version: v11.4.1

@@ -286,7 +286,7 @@ flowchart TD
 ```mermaid
 ---
 config:
-  theme: neo-dark  
+theme: neo-dark  
 title: Atividade 12
 ---
 flowchart LR

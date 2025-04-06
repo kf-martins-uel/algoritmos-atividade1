@@ -340,8 +340,6 @@ flowchart LR
 ![Diagrama atividade 13](/Parte-2/atividade13.png)
 ```mermaid
 ---
-config:
-  theme: neo-dark
 title: Atividade 13
 ---
 flowchart LR
@@ -354,25 +352,21 @@ flowchart LR
         c@{shape: manual-input}
     end
     subgraph Condições
-        if1{"(a < 180 && a > 90) || 
-             ( b < 180 && b > 90) || 
-             (c< 180 && c > 90)"}
-        if2{"(a == 90) ||
-             (b == 90) ||
-             (c == 90)"}
+        if1{"(a < 180 && a > 90) ||\n( b < 180 && b > 90) ||\n(c< 180 && c > 90)"}
+        if2{"(a == 90) ||\n(b == 90) ||\n(c == 90)"}
         if3{" a > 0) ||b > 0) ||c > 0)"}
     end
     subgraph Displays
-        no@{shape: display, label: " \"Não é triângulo\" "}
-        ac@{shape: display, label: " \"Acutângulo\" "} 
-        re@{shape: display, label: " \"Reto\" "} 
-        ob@{shape: display, label: " \"Obtusângulo\" "}
+        no@{shape: display, label: "Não é triângulo"}
+        agudo@{shape: display, label: "Acutângulo"} 
+        reto@{shape: display, label: "Reto"} 
+        obtuso@{shape: display, label: "Obtusângulo"}
     end
     start --> a --> b --> c --> if1
     if1 --> |false| if2 --> |false| if3 --> |false| no --> conector
-    if1 --> |true| ob --> conector
-    if2 --> |true| re --> conector
-    if3 --> |true| ac --> conector
+    if1 --> |true| obtuso --> conector
+    if2 --> |true| reto --> conector
+    if3 --> |true| agudo --> conector
 ```
 - [Código atividade 13: ](/Parte-2/atividade13.py)
     ```python

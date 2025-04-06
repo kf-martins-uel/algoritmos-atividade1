@@ -15,7 +15,7 @@ config:
 ---
 flowchart LR
 
-  A(["$$Start^2$$"]) --> B{Use mermaid?}
+  A([Start]) --> B{Use mermaid?}
   B -->|Yes| C[Smile]
   B -->|No| D[Cry]
   C --> E([End])

@@ -8,6 +8,8 @@
     - [Parte 2](/Parte-2/README.md)
     - [Parte 3](/Parte-3/README.md)
 
+- [Teste](/teste.mmd)
+- ![Teste](/teste.mmd)
 ```mermaid
 flowchart LR
   A[Start] --> B{Decision}

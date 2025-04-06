@@ -236,14 +236,33 @@ flowchart TB
 ---
 title: Atividade 10
 ---
-flowchart TB
+flowchart TD
     start([start])
     fim([end])
-    a@{shape: manual-input}
-    b@{shape: manual-input}
-    c@{shape: manual-input}
-    delta["`$$ \triangle = b^{2} - 4ac$$`"]
-    x1["`$$ x_i = -b + \sqrt{\triangle}$$ \above 2a`"]
+    conector@{shape: circle, label: " "}
+    subgraph " "
+        a@{shape: manual-input}
+        b@{shape: manual-input}
+        c@{shape: manual-input}
+    end
+    delta["delta = b² - 4ac"]
+    x1["x1 = (- b + √delta) / 2a"]
+    x2["x2 = (- b - √delta) / 2a"]
+    subgraph Displays
+        ddelta@{shape: display, label: "delta"}
+        dx1@{shape: display, label: "x1"}
+        dx2@{shape: display, label: "x2"}
+        invalido@{shape: display, label: "\"Não possui raizes reais\""}
+    end
+    if{delta < 0}
+    
+    start --> a --> b --> c --> delta --> if
+
+    if --> |true| invalido
+    if --> |false| x1 --> x2 --> ddelta --> dx1 --> dx2 --> conector
+    invalido --> conector
+
+    conector --> fim
 ```
 - [Código atividade 11: ](/Parte-2/atividade11.py)
     ```python
@@ -254,6 +273,46 @@ flowchart TB
 
 - [Diagrama: ](/Parte-2/atividade12.png)<br>
 ![Diagrama atividade 12](/Parte-2/atividade12.png)
+```mermaid
+---
+title: Atividade 10
+---
+flowchart TD
+    start([start])
+    fim([end])
+    conector@{shape: circle, label: " "}
+    subgraph " "
+        X@{shape: manual-input}
+        Y@{shape: manual-input}
+    end
+    subgraph Condições
+        if1{X == 0 || Y == 0}
+        if2{X > 0 && Y > 0}
+        if3{X < 0 && Y > 0}
+        if4{X < 0 && Y < 0}
+        if5{X > 0 && Y < 0}
+    end
+    subgraph Displays
+        q0@{shape: display, label: "\"Nenhum quadrante\""}
+        q1@{shape: display, label: "\"Quadrante 1\""}
+        q2@{shape: display, label: "\"Quadrante 2\""}
+        q3@{shape: display, label: "\"Quadrante 3\""}
+        q4@{shape: display, label: "\"Quadrante 4\""}
+    end
+
+    start --> X --> Y --> if1 -->|true| q0
+
+    if1 -->|false| if2 -->|false| if3 -->|false| if4 -->|false| if5
+
+    if2 -->|true| q1
+    if3 -->|true| q2
+    if4 -->|true| q3
+    if5 -->|true| q4
+    
+    conector <--- q0
+
+    conector --> fim
+```
 - [Código atividade 12: ](/Parte-2/atividade12.py)
     ```python
 

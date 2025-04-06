@@ -9,8 +9,14 @@
     - [Parte 3](/Parte-3/README.md)
 
 ```mermaid
+---
+config:
+  theme: neo-dark
+  layout: elk  
+---
 flowchart LR
-  A([Start]) --> B{Use mermaid?}
+
+  A(["$$Start^2$$"]) --> B{Use mermaid?}
   B -->|Yes| C[Smile]
   B -->|No| D[Cry]
   C --> E([End])

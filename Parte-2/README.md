@@ -62,6 +62,9 @@
 ![Diagrama atividade 7](/Parte-2/atividade7.png)
 ```mermaid
 ---
+config:
+  theme: neo-dark
+  layout: elk  
 title: Atividade 7
 ---
 flowchart LR
@@ -96,6 +99,9 @@ flowchart LR
 ![Diagrama atividade 8](/Parte-2/atividade8.png)
 ```mermaid
 ---
+config:
+  theme: neo-dark
+  layout: elk  
 title: Atividade 8
 ---
 flowchart TB
@@ -132,6 +138,8 @@ Inválida: menor que 5 maior 60.
 ![Diagrama atividade 9](/Parte-2/atividade9.png)
 ```mermaid
 ---
+config:
+  theme: neo-dark 
 title: Atividade 9
 ---
 flowchart LR
@@ -192,6 +200,8 @@ flowchart LR
 ![Diagrama atividade 10](/Parte-2/atividade10.png)
 ```mermaid
 ---
+config:
+  theme: neo-dark  
 title: Atividade 10
 ---
 flowchart TB
@@ -234,6 +244,9 @@ flowchart TB
 ![Diagrama atividade 11](/Parte-2/atividade11.png)
 ```mermaid
 ---
+config:
+  theme: neo-dark
+  layout: elk
 title: Atividade 11
 ---
 flowchart TD
@@ -255,13 +268,10 @@ flowchart TD
         invalido@{shape: display, label: "\"Não possui raizes reais\""}
     end
     if{delta < 0}
-    
     start --> a --> b --> c --> delta --> if
-
     if --> |true| invalido
     if --> |false| x1 --> x2 --> ddelta --> dx1 --> dx2 --> conector
     invalido --> conector
-
     conector --> fim
 ```
 - [Código atividade 11: ](/Parte-2/atividade11.py)
@@ -275,9 +285,11 @@ flowchart TD
 ![Diagrama atividade 12](/Parte-2/atividade12.png)
 ```mermaid
 ---
+config:
+  theme: neo-dark  
 title: Atividade 12
 ---
-flowchart TD
+flowchart LR
     start([start])
     fim([end])
     conector@{shape: circle, label: " "}
@@ -328,21 +340,39 @@ flowchart TD
 ![Diagrama atividade 13](/Parte-2/atividade13.png)
 ```mermaid
 ---
+config:
+  theme: neo-dark
 title: Atividade 13
 ---
-flowchart TB
+flowchart LR
     start([start])
     fim([end])
-    conector@{shape: circle, label: " "}
+    conector((" ")) --> fim
     subgraph " "
-
+        a@{shape: manual-input}
+        b@{shape: manual-input}
+        c@{shape: manual-input}
     end
     subgraph Condições
-
+        if1{"(a < 180 && a > 90) || 
+             ( b < 180 && b > 90) || 
+             (c< 180 && c > 90)"}
+        if2{"(a == 90) ||
+             (b == 90) ||
+             (c == 90)"}
+        if3{" a > 0) ||b > 0) ||c > 0)"}
     end
     subgraph Displays
-
+        no@{shape: display, label: "\"Não é triângulo\""}
+        ac@{shape: display, label: "\"Acutângulo\""} 
+        re@{shape: display, label: "\"Reto\""} 
+        ob@{shape: display, label: "\"Obtusângulo\""}
     end
+    start --> a --> b --> c --> if1
+    if1 --> |false| if2 --> |false| if3 --> |false| no --> conector
+    if1 --> |true| ob --> conector
+    if2 --> |true| re --> conector
+    if3 --> |true| ac --> conector
 ```
 - [Código atividade 13: ](/Parte-2/atividade13.py)
     ```python
@@ -358,6 +388,39 @@ flowchart TB
 
 - [Diagrama: ](/Parte-2/atividade14.png)<br>
 ![Diagrama atividade 14](/Parte-2/atividade14.png)
+```mermaid
+---
+config:
+  theme: neo-dark
+title: Atividade 14
+---
+flowchart LR
+    start([start])
+    fim([end])
+    conector@{shape: circle, label: " "} --> fim
+    n@{shape: manual-input}
+    subgraph Condições
+        if3{"n == 3"}
+        if4{"n == 4"}
+        if5{"n == 5"}
+        ifi3{"n < 3"}
+        ifs5{"n > 5"}
+    end
+    subgraph Displays
+        t@{shape: display, label: "TRIÂNGULO"}
+        q@{shape: display, label: "QUADRADO"}
+        p@{shape: display, label: "PENTÁGONO"}
+        np@{shape: display, label: "NÃO É UM POLÍGONO"}
+        ni@{shape: display, label: "POLÍGONO NÃO IDENTIFICADO"}
+    end
+
+    start --> n --> if3 -->|false| if4 -->|false| if5 -->|false| ifi3 -->|false| ifs5
+    if3 -->|true| t --> conector
+    if4 -->|true| q --> conector
+    if5 -->|true| p --> conector
+    ifi3 -->|true| np --> conector
+    ifs5 -->|true| ni --> conector
+```
 - [Código atividade 14: ](/Parte-2/atividade14.py)
     ```python
 
@@ -373,6 +436,26 @@ flowchart TB
 
 - [Diagrama: ](/Parte-2/atividade15.png)<br>
 ![Diagrama atividade 15](/Parte-2/atividade15.png)
+```mermaid
+---
+config:
+  theme: neo-dark
+  layout: elk  
+title: Atividade 15
+---
+flowchart TB
+    start([start]) --> nota@{shape: manual-input}
+    nota --> if1{"nota < 2"}
+    if1 --> |true| sr@{shape: display, label: "Sem rendimento"}
+    sr --> conector((" ")) --> fim([end])
+    if1 --> |false| if2{"nota < 4"}
+    if2 --> |true| Mau@{shape: display} --> conector
+    if2 --> |false| if3{"nota < 6"}
+    if3 --> |true| Regular@{shape: display} --> conector
+    if3 --> |false| if4{"nota < 8.5"}
+    if4 --> |true| Bom@{shape: display} --> conector
+    if4 --> |false| Excelente@{shape: display} --> conector
+```
 - [Código atividade 15: ](/Parte-2/atividade15.py)
     ```python
 

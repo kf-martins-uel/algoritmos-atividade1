@@ -1,4 +1,4 @@
-# Parte 1
+# Parte 1 - Entrada/Saída, Variáveis, Operadores, Atribuição
 
 1. Elaborar um algoritmo para calcular a média aritmética de 2 notas escolares de um
 aluno e escrever as notas e a média calculada.

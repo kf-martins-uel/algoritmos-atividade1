@@ -346,24 +346,18 @@ flowchart LR
     start([start])
     fim([end])
     conector((" ")) --> fim
-    subgraph " "
-        a@{shape: manual-input}
-        b@{shape: manual-input}
-        c@{shape: manual-input}
-    end
-    subgraph Condições
-        if1{"`(a < 180 && a > 90) ||<br>( b < 180 && b > 90) ||<br>(c< 180 && c > 90)`"}
-        if2{"(a == 90) ||<br>(b == 90) ||<br>(c == 90)"}
-        if3{" a > 0) ||b > 0) ||c > 0)"}
-    end
-    subgraph Displays
-
-    end
+    a@{shape: manual-input}
+    b@{shape: manual-input}
+    c@{shape: manual-input}
+    if1{"`(a < 180 && a > 90) ||<br>( b < 180 && b > 90) ||<br>(c< 180 && c > 90)`"}
+    if2{"(a == 90) ||<br>(b == 90) ||<br>(c == 90)"}
+    if3{" a > 0) ||b > 0) ||c > 0)"}
     start --> a --> b --> c --> if1
-    if1 --> |false| if2 --> |false| if3 --> |false| no --> conector
-    if1 --> |true| obtuso --> conector
-    if2 --> |true| reto --> conector
-    if3 --> |true| agudo --> conector
+    if1 --> |false| if2 --> |false| if3 --> |false|  no
+    no@{shape: display, label: "Não é triângulo"} ---> conector
+    if1 --> |true| Obtuso --> conector
+    if2 --> |true| Reto --> conector
+    if3 --> |true| Agudo --> conector
 ```
 - [Código atividade 13: ](/Parte-2/atividade13.py)
     ```python

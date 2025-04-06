@@ -78,11 +78,12 @@ flowchart TB
     if4 -->|False| if5{"média <= 10"}
     if5 -->|True| a3@{shape: display, label: "Aprovado com Excelente"}
 
-    r --> c@{shape: circle, label: " ", widh: 10}
+    r --> c
     r2 --> c
     a --> c
     a2 --> c
     a3 --> c
+    c@{shape: circle, label: " "} --> final([end])
 
 ```
 
@@ -97,12 +98,25 @@ flowchart TB
 - [Diagrama: ](/Parte-2/atividade8.png)<br>
 ![Diagrama atividade 8](/Parte-2/atividade8.png)
 ```mermaid
+---
+title: Atividade 8
+---
 flowchart TB
-start([start])
+    start([start])
+    fim([end])
+    altura@{shape: manual-input}
+    sexo@{shape: manual-input}
+    if{sexo == homem}
+    homem["peso_ideal = (72,7 * altura) - 58"]
+    mulher["peso_ideal = (62,1 * altura) - 44,7"]
 
-
-subgraph 1
-end
+    start --> altura --> sexo
+    sexo --> if
+    if -->|True| homem
+    if -->|false| mulher
+    homem --> display@{shape: display, label: "peso_ideal"}
+    mulher ---> display
+    display --> fim
 ```
 
 - [Código atividade 8: ](/Parte-2/atividade8.py)

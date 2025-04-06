@@ -64,7 +64,7 @@
 ---
 title: Atividade 7
 ---
-flowchart TB
+flowchart LR
     start([start]) --> n1@{shape: manual-input} --> n2@{shape: manual-input}
     n2 --> media["média = (n1 + n2) / 2"]
     media --> média@{shape: display} --> if1{"`média <= 3`"}
@@ -134,7 +134,7 @@ Inválida: menor que 5 maior 60.
 ---
 title: Atividade 9
 ---
-flowchart TB
+flowchart LR
     start([start])
     fim([end])
     conector@{shape: circle, label: " "}
@@ -234,7 +234,7 @@ flowchart TB
 ![Diagrama atividade 11](/Parte-2/atividade11.png)
 ```mermaid
 ---
-title: Atividade 10
+title: Atividade 11
 ---
 flowchart TD
     start([start])
@@ -275,7 +275,7 @@ flowchart TD
 ![Diagrama atividade 12](/Parte-2/atividade12.png)
 ```mermaid
 ---
-title: Atividade 10
+title: Atividade 12
 ---
 flowchart TD
     start([start])
@@ -286,11 +286,11 @@ flowchart TD
         Y@{shape: manual-input}
     end
     subgraph Condições
-        if1{X == 0 || Y == 0}
-        if2{X > 0 && Y > 0}
-        if3{X < 0 && Y > 0}
-        if4{X < 0 && Y < 0}
-        if5{X > 0 && Y < 0}
+        if1{"X == 0 || Y == 0"}
+        if2{"X > 0 && Y > 0"}
+        if3{"X < 0 && Y > 0"}
+        if4{"X < 0 && Y < 0"}
+        if5{"X > 0 && Y < 0"}
     end
     subgraph Displays
         q0@{shape: display, label: "\"Nenhum quadrante\""}
@@ -302,14 +302,18 @@ flowchart TD
 
     start --> X --> Y --> if1 -->|true| q0
 
-    if1 -->|false| if2 -->|false| if3 -->|false| if4 -->|false| if5
+    if1 --> |false| if2 --> |false| if3 --> |false| if4 --> |false| if5
 
     if2 -->|true| q1
     if3 -->|true| q2
     if4 -->|true| q3
     if5 -->|true| q4
     
-    conector <--- q0
+    q0 --> conector
+    q1 --> conector
+    q2 --> conector
+    q3 --> conector
+    q4 --> conector
 
     conector --> fim
 ```
@@ -322,6 +326,24 @@ flowchart TD
 
 - [Diagrama: ](/Parte-2/atividade13.png)<br>
 ![Diagrama atividade 13](/Parte-2/atividade13.png)
+```mermaid
+---
+title: Atividade 13
+---
+flowchart TB
+    start([start])
+    fim([end])
+    conector@{shape: circle, label: " "}
+    subgraph " "
+
+    end
+    subgraph Condições
+
+    end
+    subgraph Displays
+
+    end
+```
 - [Código atividade 13: ](/Parte-2/atividade13.py)
     ```python
 

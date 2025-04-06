@@ -8,14 +8,13 @@
     - [Parte 2](/Parte-2/README.md)
     - [Parte 3](/Parte-3/README.md)
 
-- [Teste](/teste.mmd)
-- ![Teste](/teste.mmd)
 ```mermaid
 flowchart LR
-  A[Start] --> B{Decision}
-  B -->|Yes| C[Continue]
-  B -->|No| D[Stop]
-
+  A([Start]) --> B{Use mermaid?}
+  B -->|Yes| C[Smile]
+  B -->|No| D[Cry]
+  C --> E([End])
+  D --> E
 ```    
 
->> Kauã Felipe Martins
+> Kauã Felipe Martins

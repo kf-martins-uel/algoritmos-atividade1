@@ -8,10 +8,6 @@
     - [Parte 2](/Parte-2/README.md)
     - [Parte 3](/Parte-3/README.md)
 ```mermaid
-  info
-```
-
-```mermaid
 ---
 config:
   theme: neo-dark
@@ -27,3 +23,5 @@ flowchart LR
 ```    
 
 > Kauã Felipe Martins
+
+>>mermeid version: v11.4.1

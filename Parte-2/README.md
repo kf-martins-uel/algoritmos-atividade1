@@ -363,10 +363,10 @@ flowchart LR
         if3{" a > 0) ||b > 0) ||c > 0)"}
     end
     subgraph Displays
-        no@{shape: display, label: "\"Não é triângulo\""}
-        ac@{shape: display, label: "\"Acutângulo\""} 
-        re@{shape: display, label: "\"Reto\""} 
-        ob@{shape: display, label: "\"Obtusângulo\""}
+        no@{shape: display, label: " \"Não é triângulo\" "}
+        ac@{shape: display, label: " \"Acutângulo\" "} 
+        re@{shape: display, label: " \"Reto\" "} 
+        ob@{shape: display, label: " \"Obtusângulo\" "}
     end
     start --> a --> b --> c --> if1
     if1 --> |false| if2 --> |false| if3 --> |false| no --> conector

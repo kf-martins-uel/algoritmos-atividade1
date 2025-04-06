@@ -9,6 +9,8 @@
     - [Parte 3](/Parte-3/README.md)
 
 ```mermaid
+info
+
 ---
 config:
   theme: neo-dark

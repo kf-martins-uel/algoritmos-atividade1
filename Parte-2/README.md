@@ -353,11 +353,11 @@ flowchart LR
     if2{"(a == 90) ||<br>(b == 90) ||<br>(c == 90)"}
     if3{" a > 0) ||b > 0) ||c > 0)"}
     start --> a --> b --> c --> if1
-    if1 --> |false| if2 --> |false| if3 --> |false|  no
+    if1 -->|false| if2 -->|false| if3 -->|false| no
     no@{shape: display, label: "Não é triângulo"} ---> conector
-    if1 --> |true| Obtuso --> conector
-    if2 --> |true| Reto --> conector
-    if3 --> |true| Agudo --> conector
+    if1 -->|true| Obtuso --> conector
+    if2 -->|true| Reto --> conector
+    if3 -->|true| Agudo --> conector
 ```
 - [Código atividade 13: ](/Parte-2/atividade13.py)
     ```python

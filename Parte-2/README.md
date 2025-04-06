@@ -69,9 +69,14 @@ flowchart LR
     n2 --> media["`$$média = \dfrac{n1+n2}{2}$$`"]
     media --> média@{shape: display} --> 
     if1{"`média <= 3`"}
-    if1 -->|True| r@{shape: display, label: "Reprovado sem rendimento"}
-    if1 -->|False| if2{"`$$média \leq 6$$`"}
+    if1 -->|True| r@{shape: display, label: "\"Reprovado sem rendimento\""}
+    if1 -->|False| if2{"média <= 6"}
+    if2 -->|True| r2@{shape: display, label: "\"Reprovado com insuficiente\""}
+    direction TB
+    if2 -->|False| if3{"média <= 7"}
+
 ```
+
 
 - [Código atividade 7: ](/Parte-2/atividade7.py)
     ```python

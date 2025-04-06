@@ -67,13 +67,17 @@ title: Atividade 7
 flowchart LR
     start([start]) --> n1@{shape: manual-input} --> n2@{shape: manual-input}
     n2 --> media["`$$média = \dfrac{n1+n2}{2}$$`"]
-    media --> média@{shape: display} --> 
-    if1{"`média <= 3`"}
+    media --> média@{shape: display} --> if1{"`média <= 3`"}
     if1 -->|True| r@{shape: display, label: "\"Reprovado sem rendimento\""}
     if1 -->|False| if2{"média <= 6"}
     if2 -->|True| r2@{shape: display, label: "\"Reprovado com insuficiente\""}
     direction TB
     if2 -->|False| if3{"média <= 7"}
+    if3 -->|True| a@{shape: display, label: "Aprovado com Regular"}
+    if3 -->|False| if4{"média <= 9"}
+    if4 -->|True| a2@{shape: display, label: "Aprovado com Bom"}
+    if4 -->|False| if5{"média <= 10"}
+    if5 -->|True| a3@{shape: display, label: "Aprovado com Excelente"}
 
 ```
 

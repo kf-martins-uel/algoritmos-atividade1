@@ -352,8 +352,8 @@ flowchart LR
         c@{shape: manual-input}
     end
     subgraph Condições
-        if1{"(a < 180 && a > 90) ||\n( b < 180 && b > 90) ||\n(c< 180 && c > 90)"}
-        if2{"(a == 90) ||\n(b == 90) ||\n(c == 90)"}
+        if1{"`(a < 180 && a > 90) ||<br>( b < 180 && b > 90) ||<br>(c< 180 && c > 90)`"}
+        if2{"(a == 90) ||<br>(b == 90) ||<br>(c == 90)"}
         if3{" a > 0) ||b > 0) ||c > 0)"}
     end
     subgraph Displays

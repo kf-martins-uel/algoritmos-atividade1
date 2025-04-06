@@ -56,8 +56,23 @@
 
 7. Escrever um algoritmo que leia duas notas escolares de um aluno, calcule sua média e escreva a média calculada e sua situação final. Considerando: se (media <= 3): “Reprovado sem rendimento", se (3 < média <= 6): "Reprovado com Insuficiente", se (6 < média <= 7): "Aprovado com Regular", se (7 < média <= 9): "Aprovado com Bom" e finalmente se (9 < média <= 10): "Aprovado com Excelente".
 
+
+
 - [Diagrama: ](/Parte-2/atividade7.png)<br>
 ![Diagrama atividade 7](/Parte-2/atividade7.png)
+```mermaid
+---
+title: Atividade 7
+---
+flowchart LR
+    start([start]) --> n1@{shape: manual-input} --> n2@{shape: manual-input}
+    n2 --> media["`$$média = \dfrac{n1+n2}{2}$$`"]
+    media --> média@{shape: display} --> 
+    if1{"`média <= 3`"}
+    if1 -->|True| r@{shape: display, label: "Reprovado sem rendimento"}
+    if1 -->|False| if2{"`$$média \leq 6$$`"}
+```
+
 - [Código atividade 7: ](/Parte-2/atividade7.py)
     ```python
 

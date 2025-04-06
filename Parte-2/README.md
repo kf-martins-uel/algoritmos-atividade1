@@ -84,10 +84,7 @@ flowchart TB
     a2 --> c
     a3 --> c
     c@{shape: circle, label: " "} --> final([end])
-
 ```
-
-
 - [Código atividade 7: ](/Parte-2/atividade7.py)
     ```python
 
@@ -118,16 +115,72 @@ flowchart TB
     mulher ---> display
     display --> fim
 ```
-
 - [Código atividade 8: ](/Parte-2/atividade8.py)
     ```python
 
     ```
 
-9. Elabore um algoritmo que, dada a idade de um nadador, classifique-o em uma das seguintes categorias: Infantil A: 5 - 7 anos Juvenil B: 14 - 17 anos Infantil B: 8 - 10 anos Sênior: maiores de 18 anos Juvenil A: 11 - 13 anos Inválida: menor que 5 maior 60.
+9. Elabore um algoritmo que, dada a idade de um nadador, classifique-o em uma das seguintes categorias: 
+Infantil A: 5 - 7 anos; 
+Infantil B: 8 - 10 anos; 
+Juvenil A: 11 - 13 anos; 
+Juvenil B: 14 - 17 anos; 
+Sênior: maiores de 18 anos; 
+Inválida: menor que 5 maior 60.
 
-- [Diagrama: ](/Parte-2/atividade9.png)<br>
+- [Diagrama: ](/Parte-2/atividade9.png)<bra>
 ![Diagrama atividade 9](/Parte-2/atividade9.png)
+```mermaid
+---
+title: Atividade 9
+---
+flowchart TB
+    start([start])
+    fim([end])
+    conector@{shape: circle, label: " "}
+    idade@{shape: manual-input}
+
+    subgraph Categorias
+        ia@{shape: display, label: "\"Infantil A\""}
+        ib@{shape: display, label: "\"Infantil B\""}
+        ja@{shape: display, label: "\"Juvenil A\""}
+        jb@{shape: display, label: "\"Juvenil B\""}
+        se@{shape: display, label: "\"Sênior\""}
+        invalida@{shape: display, label: "\"Inválida\""}
+    end
+
+    subgraph Condições
+        if1{"idade < 5 || idade > 60"}
+        if2{"idade >= 5 && idade <= 7"}
+        if3{"idade >= 8 && idade <= 10"}
+        if4{"idade >= 11 && idade <= 13"}
+        if5{"idade >= 14 && idade <= 17"}
+        if6{"idade >= 18"}
+    end
+
+    start --> idade
+    idade --> if1
+    if1 --->|true| invalida
+    if2 --->|true| ia
+    if3 --->|true| ib
+    if4 --->|true| ja 
+    if5 --->|true| jb 
+    if6 --->|true| se
+
+    if1 --->|false| if2
+    if2 --->|false| if3
+    if3 --->|false| if4
+    if4 --->|false| if5
+    if5 --->|false| if6
+
+    ia --> conector
+    ib --> conector
+    ja --> conector
+    jb --> conector
+    se --> conector
+    invalida --> conector
+    conector --> fim
+```
 - [Código atividade 9: ](/Parte-2/atividade9.py)
     ```python
 
@@ -137,6 +190,39 @@ flowchart TB
 
 - [Diagrama: ](/Parte-2/atividade10.png)<br>
 ![Diagrama atividade 10](/Parte-2/atividade10.png)
+```mermaid
+---
+title: Atividade 10
+---
+flowchart TB
+    start([start])
+    fim([end])
+    idade@{shape: manual-input}
+    sexo@{shape: manual-input}
+    conector@{shape: circle, label: " "}
+
+    subgraph Condições
+        if1{"sexo == 'homem'"}
+        if2{idade > 65}
+        if3{idade > 60}
+    end
+    subgraph Saídas
+        valido@{shape: display, label: "\"Pode se aposentar\""}
+        invalido@{shape: display, label: "\"Não pode se aposentar\""}
+    end
+
+    start --> idade --> sexo --> if1
+    if1 -->|true| if2
+    if1 -->|false| if3
+    if2 -->|true| valido
+    if3 -->|true| valido
+    if2 -->|false| invalido
+    if3 -->|false| invalido
+
+    valido --> conector
+    invalido --> conector
+    conector --> fim
+```
 - [Código atividade 10: ](/Parte-2/atividade10.py)
     ```python
 
@@ -146,6 +232,19 @@ flowchart TB
 
 - [Diagrama: ](/Parte-2/atividade11.png)<br>
 ![Diagrama atividade 11](/Parte-2/atividade11.png)
+```mermaid
+---
+title: Atividade 10
+---
+flowchart TB
+    start([start])
+    fim([end])
+    a@{shape: manual-input}
+    b@{shape: manual-input}
+    c@{shape: manual-input}
+    delta["`$$ \triangle = b^{2} - 4ac$$`"]
+    x1["`$$ x_i = -b + \sqrt{\triangle}$$ \above 2a`"]
+```
 - [Código atividade 11: ](/Parte-2/atividade11.py)
     ```python
 

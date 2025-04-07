@@ -3,50 +3,78 @@
 1. Elaborar um algoritmo para calcular a média aritmética de 2 notas escolares de um
 aluno e escrever as notas e a média calculada.
 
-- [Diagrama: ](/Parte-1/atividade1.png)<br>
-![Diagrama  atividade 1](/Parte-1/atividade1.png)
-- [Código atividade 1: ](/Parte-1/atividade1.py)
-    ```python
+    - [Diagrama:](/Parte-1/atividade1.png)  
+    ![Diagrama  atividade 1](/Parte-1/atividade1.png)
+    - [Código atividade 1:](/Parte-1/atividade1.py)
 
+    ```python
+    n1 = float(input("Nota 1: "))
+    n2 = float(input("Nota 2: "))
+
+    media = (n1 + n2) / 2
+
+    print(f"Nota 1: {n1}, nota 2: {n2}, média: {media}")
     ```
 
 2. Elaborar um algoritmo para calcular a área de uma circunferência, e apresentar a
 medida da área calculada. Sabendo-se que: A= πr2 , onde A é a variável que conterá
 o cálculo da área π é o valor de pi (3,14159) e r é o valor do raio.
 
-- [Diagrama: ](/Parte-1/atividade2.png)<br>
-![Diagrama atividade 2](/Parte-1/atividade2.png)
-- [Código atividade 2: ](/Parte-1/atividade2.py)
-    ```python
+    - [Diagrama:](/Parte-1/atividade2.png)  
+    ![Diagrama atividade 2](/Parte-1/atividade2.png)
+    - [Código atividade 2:](/Parte-1/atividade2.py)
 
+    ```python
+    import math
+
+    r = float(input("Digite o raio: "))
+
+    A = math.pi*r*r
+
+    print(f"Área: {A:.2f} unidades de medida")
     ```
 
 3. Elaborar um algoritmo para calcular e apresentar o volume de uma lata de óleo,
-utilizando a fórmula: VOLUME = 3,14159 * (R2) * ALTURA.
+utilizando a fórmula: VOLUME = 3,14159 *(R2)* ALTURA.
 
-- [Diagrama: ](/Parte-1/atividade3.png)<br>
-![Diagrama atividade 3](/Parte-1/atividade3.png)
-- [Código atividade 3: ](/Parte-1/atividade3.py)
+    - [Diagrama:](/Parte-1/atividade3.png)  
+    ![Diagrama atividade 3](/Parte-1/atividade3.png)
+    - [Código atividade 3:](/Parte-1/atividade3.py)
+
     ```python
+    import math
 
+    raio = float(input("Digite o raio: "))
+    altura = float(input("Digite a altura: "))
+
+    volume = math.pi*raio**2*altura
+
+    print(f"Volume: {volume:.2f} unidades de medida")
     ```
 
 4. Dado o comprimento dos lados de um triângulo retângulo (b e c, que são valores
 reais), calcule o comprimento da sua hipotenusa (h = raiz de (b2 + c2)).
 
-- [Diagrama: ](/Parte-1/atividade4.png)<br>
-![Diagrama atividade 4](/Parte-1/atividade4.png)
-- [Código atividade 4: ](/Parte-1/atividade4.py)
-    ```python
+    - [Diagrama:](/Parte-1/atividade4.png)  
+    ![Diagrama atividade 4](/Parte-1/atividade4.png)
+    - [Código atividade 4:](/Parte-1/atividade4.py)
 
+    ```python
+    b = float(input("Digite o valor de b:"))
+    c = float(input("Digite o valor de c:"))
+
+    h = (b**2 + c**2)**(1/2)
+
+    print(f"Hipotenusa: {h:.2f}")
     ```
 
 5. Elaborar um algoritmo para efetuar o cálculo de uma prestação em atraso, utilizando
 a fórmula: PRESTAÇÃO = VALOR + (VALOR*(TAXA/100)*TEMPO).
 
-- [Diagrama: ](/Parte-1/atividade5.png)<br>
-![Diagrama atividade 5](/Parte-1/atividade5.png)
-- [Código atividade 5: ](/Parte-1/atividade5.py)
+    - [Diagrama:](/Parte-1/atividade5.png)  
+    ![Diagrama atividade 5](/Parte-1/atividade5.png)
+    - [Código atividade 5:](/Parte-1/atividade5.py)
+
     ```python
 
     ```
@@ -55,26 +83,29 @@ a fórmula: PRESTAÇÃO = VALOR + (VALOR*(TAXA/100)*TEMPO).
 operações de adição, subtração e multiplicação de A por B, apresentando ao final
 os três resultados obtidos.
 
-- [Diagrama: ](/Parte-1/atividade6.png)<br>
-![Diagrama atividade 6](/Parte-1/atividade6.png)
-- [Código atividade 6: ](/Parte-1/atividade6.py)
+   - [Diagrama:](/Parte-1/atividade6.png)  
+   ![Diagrama atividade 6](/Parte-1/atividade6.png)
+   - [Código atividade 6:](/Parte-1/atividade6.py)
+
     ```python
 
     ```
 
 7. Fazer um algoritmo para ler o raio de um círculo, calcular e imprimir o perímetro
-(perímetro ← 2 * pi * raio) e a área (área ← pi * raio2) do círculo.
+(perímetro ← 2 *pi* raio) e a área (área ← pi * raio2) do círculo.
 
-- [Diagrama: ](/Parte-1/atividade7.png)<br>
-![Diagrama atividade 7](/Parte-1/atividade7.png)
-- [Código atividade 7: ](/Parte-1/atividade7.py)
+   - [Diagrama:](/Parte-1/atividade7.png)  
+   ![Diagrama atividade 7](/Parte-1/atividade7.png)
+   - [Código atividade 7:](/Parte-1/atividade7.py)
+
     ```python
 
     ```
 
 8. O cardápio de uma casa de hambúrguer é dado abaixo. Preparar um algoritmo para
-ler a quantidade de cada item comprado e calcular a conta final do cliente. <br>
+ler a quantidade de cada item comprado e calcular a conta final do cliente.   
 Cardápio BCC Burgers:
+
     | Item           | Preço   |
     |----------------|---------|
     | Hamburguer     | R$ 3,50 |
@@ -82,9 +113,10 @@ Cardápio BCC Burgers:
     | MilkShake      | R$ 6,00 |
     | Coca-cola      | R$ 2,50 |
 
-- [Diagrama: ](/Parte-1/atividade8.png)<br>
-![Diagrama atividade 8](/Parte-1/atividade8.png)
-- [Código atividade 8: ](/Parte-1/atividade8.py)
-    ```python
-
-    ```
+   - [Diagrama:](/Parte-1/atividade8.png)  
+   ![Diagrama atividade 8](/Parte-1/atividade8.png)
+   - [Código atividade 8:](/Parte-1/atividade8.py)
+   
+   ```python
+   
+   ```

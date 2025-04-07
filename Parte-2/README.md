@@ -148,23 +148,19 @@ flowchart LR
     conector@{shape: circle, label: " "}
     idade@{shape: manual-input}
 
-    subgraph Categorias
         ia@{shape: display, label: "\"Infantil A\""}
         ib@{shape: display, label: "\"Infantil B\""}
         ja@{shape: display, label: "\"Juvenil A\""}
         jb@{shape: display, label: "\"Juvenil B\""}
         se@{shape: display, label: "\"Sênior\""}
         invalida@{shape: display, label: "\"Inválida\""}
-    end
 
-    subgraph Condições
         if1{"idade < 5 || idade > 60"}
         if2{"idade >= 5 && idade <= 7"}
         if3{"idade >= 8 && idade <= 10"}
         if4{"idade >= 11 && idade <= 13"}
         if5{"idade >= 14 && idade <= 17"}
         if6{"idade >= 18"}
-    end
 
     start --> idade
     idade --> if1
@@ -211,15 +207,13 @@ flowchart TB
     sexo@{shape: manual-input}
     conector@{shape: circle, label: " "}
 
-    subgraph Condições
         if1{"sexo == 'homem'"}
         if2{idade > 65}
         if3{idade > 60}
-    end
-    subgraph Saídas
+
         valido@{shape: display, label: "\"Pode se aposentar\""}
         invalido@{shape: display, label: "\"Não pode se aposentar\""}
-    end
+
 
     start --> idade --> sexo --> if1
     if1 -->|true| if2
@@ -253,20 +247,20 @@ flowchart TD
     start([start])
     fim([end])
     conector@{shape: circle, label: " "}
-    subgraph " "
+
         a@{shape: manual-input}
         b@{shape: manual-input}
         c@{shape: manual-input}
-    end
+
     delta["delta = b² - 4ac"]
     x1["x1 = (- b + √delta) / 2a"]
     x2["x2 = (- b - √delta) / 2a"]
-    subgraph Displays
+
         ddelta@{shape: display, label: "delta"}
         dx1@{shape: display, label: "x1"}
         dx2@{shape: display, label: "x2"}
         invalido@{shape: display, label: "\"Não possui raizes reais\""}
-    end
+
     if{delta < 0}
     start --> a --> b --> c --> delta --> if
     if --> |true| invalido
@@ -293,24 +287,20 @@ flowchart LR
     start([start])
     fim([end])
     conector@{shape: circle, label: " "}
-    subgraph " "
         X@{shape: manual-input}
         Y@{shape: manual-input}
-    end
-    subgraph Condições
+
         if1{"X == 0 || Y == 0"}
         if2{"X > 0 && Y > 0"}
         if3{"X < 0 && Y > 0"}
         if4{"X < 0 && Y < 0"}
         if5{"X > 0 && Y < 0"}
-    end
-    subgraph Displays
+
         q0@{shape: display, label: "\"Nenhum quadrante\""}
         q1@{shape: display, label: "\"Quadrante 1\""}
         q2@{shape: display, label: "\"Quadrante 2\""}
         q3@{shape: display, label: "\"Quadrante 3\""}
         q4@{shape: display, label: "\"Quadrante 4\""}
-    end
 
     start --> X --> Y --> if1 -->|true| q0
 
@@ -384,20 +374,18 @@ flowchart LR
     fim([end])
     conector@{shape: circle, label: " "} --> fim
     n@{shape: manual-input}
-    subgraph Condições
-        if3{"n == 3"}
-        if4{"n == 4"}
-        if5{"n == 5"}
-        ifi3{"n < 3"}
-        ifs5{"n > 5"}
-    end
-    subgraph Displays
-        t@{shape: display, label: "TRIÂNGULO"}
-        q@{shape: display, label: "QUADRADO"}
-        p@{shape: display, label: "PENTÁGONO"}
-        np@{shape: display, label: "NÃO É UM POLÍGONO"}
-        ni@{shape: display, label: "POLÍGONO NÃO IDENTIFICADO"}
-    end
+
+    if3{"n == 3"}
+    if4{"n == 4"}
+    if5{"n == 5"}
+    ifi3{"n < 3"}
+    ifs5{"n > 5"}
+
+    t@{shape: display, label: "TRIÂNGULO"}
+    q@{shape: display, label: "QUADRADO"}
+    p@{shape: display, label: "PENTÁGONO"}
+    np@{shape: display, label: "NÃO É UM POLÍGONO"}
+    ni@{shape: display, label: "POLÍGONO NÃO IDENTIFICADO"}
 
     start --> n --> if3 -->|false| if4 -->|false| if5 -->|false| ifi3 -->|false| ifs5
     if3 -->|true| t --> conector

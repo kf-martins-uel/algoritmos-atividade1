@@ -3,18 +3,18 @@
 1. Elaborar um algoritmo para calcular a média aritmética de 2 notas escolares de um
 aluno e escrever as notas e a média calculada.
 
-    - [Diagrama:](/Parte-1/atividade1.png)  
-    ![Diagrama  atividade 1](/Parte-1/atividade1.png)
-    - [Código atividade 1:](/Parte-1/atividade1.py)
+   - [Diagrama:](/Parte-1/atividade1.png)  
+   ![Diagrama  atividade 1](/Parte-1/atividade1.png)  
+   - [Código atividade 1:](/Parte-1/atividade1.py)  
 
-    ```python
-    n1 = float(input("Nota 1: "))
-    n2 = float(input("Nota 2: "))
-
-    media = (n1 + n2) / 2
-
-    print(f"Nota 1: {n1}, nota 2: {n2}, média: {media}")
-    ```
+   ```python
+   n1 = float(input("Nota 1: "))
+   n2 = float(input("Nota 2: "))
+   
+   media = (n1 + n2) / 2
+   
+   print(f"Nota 1: {n1}, nota 2: {n2}, média: {media}")
+   ```
 
 2. Elaborar um algoritmo para calcular a área de uma circunferência, e apresentar a
 medida da área calculada. Sabendo-se que: A= πr2 , onde A é a variável que conterá
@@ -125,7 +125,7 @@ os três resultados obtidos.
     ```
 
 8. O cardápio de uma casa de hambúrguer é dado abaixo. Preparar um algoritmo para
-ler a quantidade de cada item comprado e calcular a conta final do cliente.   
+ler a quantidade de cada item comprado e calcular a conta final do cliente.  
 Cardápio BCC Burgers:
 
     | Item           | Preço   |

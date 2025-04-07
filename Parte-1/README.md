@@ -76,7 +76,13 @@ a fórmula: PRESTAÇÃO = VALOR + (VALOR*(TAXA/100)*TEMPO).
     - [Código atividade 5:](/Parte-1/atividade5.py)
 
     ```python
+    valor = float(input("Diigte o valor: "))
+    taxa = float(input("Diigte a taxa (em %): "))
+    tempo = float(input("Diigte o tempo (dias): "))
 
+    prestacao = valor + (valor * (taxa/100) * tempo)
+
+    print(f"A prestação será {prestacao:.2f} unidades de dinheiro")
     ```
 
 6. Elaborar um algoritmo para ler dois valores inteiros (variáveis A e B) e efetuar as
@@ -88,7 +94,16 @@ os três resultados obtidos.
    - [Código atividade 6:](/Parte-1/atividade6.py)
 
     ```python
+    A = int(input("Digite o valor de A: "))
+    B = int(input("Digite o valor de B: "))
 
+    sum1 = A+B
+    sub = A-B
+    times = A*B
+
+    print(f"Soma: {sum1}")
+    print(f"Subtração: {sub} ")
+    print(f"Multiplicação: {times}")
     ```
 
 7. Fazer um algoritmo para ler o raio de um círculo, calcular e imprimir o perímetro
@@ -99,7 +114,14 @@ os três resultados obtidos.
    - [Código atividade 7:](/Parte-1/atividade7.py)
 
     ```python
+    import math
 
+    r = float(input("Digite o raio: "))
+
+    P = 2 * math.pi * r
+    A = math.pi * r**2
+
+    print(f"Perímetro: {P:.2f}\nÁrea: {A:.2f}")
     ```
 
 8. O cardápio de uma casa de hambúrguer é dado abaixo. Preparar um algoritmo para
@@ -114,9 +136,16 @@ Cardápio BCC Burgers:
     | Coca-cola      | R$ 2,50 |
 
    - [Diagrama:](/Parte-1/atividade8.png)  
-   ![Diagrama atividade 8](/Parte-1/atividade8.png)
-   - [Código atividade 8:](/Parte-1/atividade8.py)
-   
+   ![Diagrama atividade 8](/Parte-1/atividade8.png)  
+   - [Código atividade 8:](/Parte-1/atividade8.py)  
+
    ```python
-   
+       hamburguer = int(input("Quantidade de hamburguer: "))
+    cheeseburguer = int(input("Quantidade de cheeseburguer: "))
+    milkshake = int(input("Quantidade de milkshake: "))
+    cocacola = int(input("Quantidade de coca-cola: "))
+
+    total = 3.5*hamburguer + 4.1*cheeseburguer + 6.0*milkshake + 2.5*cocacola
+
+    print(f"Conta final: R$ {total}")
    ```

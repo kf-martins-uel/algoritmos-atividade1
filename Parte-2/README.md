@@ -4,26 +4,36 @@
 
     - [Diagrama:](/Parte-2/atividade1.png)  
     ![Diagrama atividade 1](/Parte-2/atividade1.png)
-    - [Código atividade 1: ](/Parte-2/atividade1.py)
+    - [Código atividade 1:](/Parte-2/atividade1.py)
 
     ```python
     n1 = float(input("Digite o valor 1: "))
     n2 = float(input("Digite o valor 2: "))
 
     if(n1 > n2):
-    print(f"{n2} é o menor valor")
+       print(f"{n2} é o menor valor")
     else:
-    print(f"{n1} é o menor valor")
+       print(f"{n1} é o menor valor")
     ```
 
 2. Escrever um algoritmo que leia valores referentes às duas notas escolares de um aluno. Calcular a média e escrever: a média e a situação do aluno. Considerando: "Aprovado por Média” se (media >=7), "Não Aprovado por média” se (média < 7).
 
     - [Diagrama:](/Parte-2/atividade2.png)  
     ![Diagrama atividade 2](/Parte-2/atividade2.png)
-    - [Código atividade 2: ](/Parte-2/atividade2.py)
+    - [Código atividade 2:](/Parte-2/atividade2.py)
 
     ```python
+    nota1 = float(input("Nota 1: "))
+    nota2 = float(input("Nota 2: "))
 
+    media  = (nota1 + nota2) / 2
+
+    print(f"Média: {media:.2f}")
+
+    if media >= 7.0:
+       print("Aprovado por Média")
+    else:
+       print("Não aprovado por Média")
     ```
 
 3. Escrever um algoritmo que leia dois valores numéricos, efetue a adição desses valores. Se o valor somado for maior ou igual a dez, este deve ser escrito somando-se a ele mais cinco; caso contrário este deverá ser escrito subtraindo-se sete.
@@ -33,7 +43,16 @@
     - [Código atividade 3:](/Parte-2/atividade3.py)
 
     ```python
+    n1 = int(input("valor 1: "))
+    n2 = int(input("valor 2: "))
+    res = n1+n2
 
+    if res >= 10:
+       res += 5
+    else: 
+       res -=7
+
+    print(res)
     ```
 
 4. Criar um algoritmo que leia dois números e imprimir uma mensagem dizendo se eles são iguais ou diferentes. Se forem diferentes, imprimir em ordem crescente.
@@ -43,7 +62,17 @@
     - [Código atividade 4:](/Parte-2/atividade4.py)
 
     ```python
+    n1 = int(input("Valor 1: "))
+    n2 = int(input("Valor 2: "))
 
+    if n1 == n2:
+       print("São iguais")
+    else:
+       print("Sao diferentes")
+       if n1 > n2:
+          print(f"{n2}, {n1}")
+       else:
+          print(f"{n1}, {n2}")
     ```
 
 5. Elabore um algoritmo que leia dois valores digitados pelo usuário em seguida leia uma operação matemática desejada [ + , - , * , / ], após ler os valores e a operação calcular e escrever o resultado desta da operação.
@@ -465,7 +494,7 @@ Inválida: menor que 5 maior 60.
         if4 --> |false| Excelente@{shape: display} --> conector
     ```
 
-    - [Código atividade 15: ](/Parte-2/atividade15.py)
+    - [Código atividade 15:](/Parte-2/atividade15.py)
 
     ```python
 

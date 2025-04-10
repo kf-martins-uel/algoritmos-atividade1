@@ -51,6 +51,12 @@ Faça um único programa com um menu para que se possa escolher qual questão ex
 
 - [Diagrama: ](/Parte-3/atividade6.png)<br>
 ![Diagrama atividade 6](/Parte-3/atividade6.png)
+    ```mermaid
+    flowchart TB
+        start([start]) --> contador["contador = 1"] --> for{{contador <= 10}} -->|true| nome@{shape: manual-input} --> idade@{shape: manual-input} --> sexo@{shape: manual-input} --> i["contador += 1"]
+        i --> if{"sexo == masculino && idade >= 21"} -->|true| dnome@{shape: display, label: "nome"}
+        for -->|false| fim([end])
+    ```
 - [Código atividade 6: ](/Parte-3/atividade6.py)
     ```python
 
@@ -60,6 +66,12 @@ Faça um único programa com um menu para que se possa escolher qual questão ex
 
 - [Diagrama: ](/Parte-3/atividade7.png)<br>
 ![Diagrama atividade 7](/Parte-3/atividade7.png)
+  ```mermaid
+  flowchart TB
+      start([start]) --> n@{shape: manual-input} --> i@{shape: manual-input} --> contador["c = 0"] --> for{{"c <= n"}}
+      for -->|false| fim([end])
+      for -->|true| display@{shape: display, label: contador} --> inc["contador += i"]
+  ```
 - [Código atividade 7: ](/Parte-3/atividade7.py)
     ```python
 
@@ -69,6 +81,12 @@ Faça um único programa com um menu para que se possa escolher qual questão ex
 
 - [Diagrama: ](/Parte-3/atividade8.png)<br>
 ![Diagrama atividade 8](/Parte-3/atividade8.png)
+  ```mermaid
+  flowchart TB
+      start([start]) --> n@{shape: manual-input} --> contador["c = 1"] --> for{{"c <= n"}}
+      for -->|false| fim([end])
+      for -->|true| if{"contador % 2 == 1"} --> display@{shape: display, label: contador} --> inc["contador += 1"]
+  ```
 - [Código atividade 8: ](/Parte-3/atividade8.py)
     ```python
 
@@ -78,6 +96,15 @@ Faça um único programa com um menu para que se possa escolher qual questão ex
 
 - [Diagrama: ](/Parte-3/atividade9.png)<br>
 ![Diagrama atividade 9](/Parte-3/atividade9.png)
+  ```mermaid
+  flowchart TB
+      start([start]) --> n@{shape: manual-input} --> contador["c = 1"] --> for{{"c <= n"}}
+      for -->|false| fim([end])
+      for -->|true| dc@{shape: display, label: "contador"} --> factotal["factotal = 0"] --> fac["fac = 1"] -->  forfac{{fac <= c}} -->|false| cinc["contador += 1"]
+      forfac -->|true| ft[factotal *= fac] --> df@{shape: display, label: "factotal"} --> finc["fac += 1"]
+      cinc --> for
+      finc --> forfac
+  ```
 - [Código atividade 9: ](/Parte-3/atividade9.py)
     ```python
 

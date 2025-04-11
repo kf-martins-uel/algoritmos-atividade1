@@ -82,6 +82,20 @@
     - [Código atividade 5:](/Parte-2/atividade5.py)
 
     ```python
+    n1 = int(input("Digite o primeiro valor: "))
+    n2 = int(input("Digite o segundo valor: "))
+    op = input("Digite um operador [+, -, *, /]: ")
+
+    if op == "+":
+        print(n1+n2)
+    elif op == "-":
+        print(n1-n2)
+    elif op == "*":
+        print(n1*n2)
+    elif op == "/":
+        print(n1/n2)
+    else:
+        print("Operador inválido")
 
     ```
 
@@ -92,13 +106,23 @@
     - [Código atividade 6:](/Parte-2/atividade6.py)
 
     ```python
+    salario = float(input("Digite o salário: "))
 
+    # Como o python é burro com float, se deixar salario*=1.x, ele sempre dá um valor aproximado. 
+    # Escrever como a = a + (a * 0.x) reduz um pouco esses problemas.
+    if salario < 800: 
+        salario = salario + (salario*0.15)
+    elif salario <= 1500:
+        salario = salario + (salario*0.1)
+    else:
+        salario = salario + (salario*0.05)
+
+    print(f"Reajustado para: {salario}")
     ```
 
 7. Escrever um algoritmo que leia duas notas escolares de um aluno, calcule sua média e escreva a média calculada e sua situação final. Considerando: se (media <= 3): “Reprovado sem rendimento", se (3 < média <= 6): "Reprovado com Insuficiente", se (6 < média <= 7): "Aprovado com Regular", se (7 < média <= 9): "Aprovado com Bom" e finalmente se (9 < média <= 10): "Aprovado com Excelente".
 
     - [Diagrama:](/Parte-2/atividade7.png)  
-    ![Diagrama atividade 7](/Parte-2/atividade7.png)
 
     ```mermaid
     ---
@@ -132,13 +156,27 @@
     - [Código atividade 7:](/Parte-2/atividade7.py)
 
     ```python
+    n1 = float(input("Nota 1: "))
+    n2 = float(input("Nota 2: "))
 
+    media = (n1+n2)  / 2
+    print(f"Média: {media}")
+
+    if media <= 3:
+        print("Reprovado sem rendimento")
+    elif media <= 6:
+        print("Reprovado com Insuficiente")
+    elif media <= 7:
+        print("Aprovado com Regular")
+    elif media <= 9:
+        print("Aprovado com Bom")
+    elif media <= 10:
+        print("Aprovado com Excelente")
     ```
 
 8. Tendo como dados de entrada a altura e o sexo de uma pessoa, construa um algoritmo que calcule e escreva o seu peso ideal, utilizando as seguintes fórmulas: Para homens: (72,7*h)-58; Para mulheres: (62,1*h)-44,7.
 
     - [Diagrama:](/Parte-2/atividade8.png)  
-    ![Diagrama atividade 8](/Parte-2/atividade8.png)
 
     ```mermaid
     ---
@@ -168,7 +206,16 @@
     - [Código atividade 8:](/Parte-2/atividade8.py)
 
     ```python
+    altura = float(input("Altura: "))
+    sexo = input("Sexo [m, f]: ")
+    pesoIdeal = 0
 
+    if sexo == 'm':
+        pesoIdeal = (72.7*altura)-58
+    else:
+        pesoIdeal = (62.1*altura)-44.7
+
+    print(f"Peso ideal: {pesoIdeal: 0.2f}")
     ```
 
 9. Elabore um algoritmo que, dada a idade de um nadador, classifique-o em uma das seguintes categorias:  

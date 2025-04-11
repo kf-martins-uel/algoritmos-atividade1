@@ -8,7 +8,6 @@ Faça um único programa com um menu para que se possa escolher qual questão ex
 ![Diagrama atividade 1](/Parte-3/atividade1.png)
 - [Código atividade 1: ](/Parte-3/atividade1.py)
     ```python
-
     ```
 
 2. Leia 10 números quaisquer e imprima a metade de cada número.
@@ -96,15 +95,6 @@ Faça um único programa com um menu para que se possa escolher qual questão ex
 
 - [Diagrama: ](/Parte-3/atividade9.png)<br>
 ![Diagrama atividade 9](/Parte-3/atividade9.png)
-  ```mermaid
-  flowchart TB
-      start([start]) --> n@{shape: manual-input} --> contador["c = 1"] --> for{{"c <= n"}}
-      for -->|false| fim([end])
-      for -->|true| dc@{shape: display, label: "contador"} --> factotal["factotal = 0"] --> fac["fac = 1"] -->  forfac{{fac <= c}} -->|false| cinc["contador += 1"]
-      forfac -->|true| ft[factotal *= fac] --> df@{shape: display, label: "factotal"} --> finc["fac += 1"]
-      cinc --> for
-      finc --> forfac
-  ```
 - [Código atividade 9: ](/Parte-3/atividade9.py)
     ```python
 

@@ -9,7 +9,9 @@ Faça um único programa com um menu para que se possa escolher qual questão ex
     - [Código atividade 1:](/Parte-3/atividade1.py)
 
     ```python
-
+    for i in range(5): 
+        i = int(input(f"{i+1}. Digite um número: "))
+        print(f"Quadrado de {i} = {i**2}")
     ```
 
 2. Leia 10 números quaisquer e imprima a metade de cada número.
@@ -19,7 +21,9 @@ Faça um único programa com um menu para que se possa escolher qual questão ex
     - [Código atividade 2:](/Parte-3/atividade2.py)
 
     ```python
-
+    for i in range(10): 
+        i = int(input(f"{i+1}. Digite um número: "))
+        print(f"Metade de {i} = {i/2}")  
     ```
 
 3. Imprima todos os números pares no intervalo entre 1 e 10.
@@ -29,7 +33,12 @@ Faça um único programa com um menu para que se possa escolher qual questão ex
     - [Código atividade 3:](/Parte-3/atividade3.py)
 
     ```python
-
+    n = 1
+    while n <= 10:
+      resto = n%2
+      if not resto: # resto != 0
+         print(n)
+      n+=1 
     ```
 
 4. Receba 15 números quaisquer e imprima a raiz quadrada de cada número.
@@ -39,7 +48,11 @@ Faça um único programa com um menu para que se possa escolher qual questão ex
     - [Código atividade 4:](/Parte-3/atividade4.py)
 
     ```python
-
+    i = 0 
+    while i < 15:
+       n = int(input(f"{i+1}. Digite um número: "))
+       print(f"Raiz de {n} = {n**(1/2)}")
+       i+=1
     ```
 
 5. Escrever a tabela de conversão de polegadas para centímetros. Deseja-se que na tabela constem valores desde 1 polegada até 20 polegadas inteiras. (1pol = 2,54cm).

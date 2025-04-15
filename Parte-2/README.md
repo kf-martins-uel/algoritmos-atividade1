@@ -227,7 +227,6 @@ Sênior: maiores de 18 anos;
 Inválida: menor que 5 maior 60.
 
    - [Diagrama:](/Parte-2/atividade9.png)  
-   ![Diagrama atividade 9](/Parte-2/atividade9.png)
 
     ```mermaid
     ---
@@ -235,7 +234,7 @@ Inválida: menor que 5 maior 60.
     theme: neo-dark 
     title: Atividade 9
     ---
-    flowchart LR
+    flowchart TB
         start([start])
         fim([end])
         conector@{shape: circle, label: " "}
@@ -282,13 +281,25 @@ Inválida: menor que 5 maior 60.
     - [Código atividade 9:](/Parte-2/atividade9.py)
 
     ```python
+    idade = int(input("Digite a idade: "))
 
+    if idade < 5 or idade > 60:
+        print("Inválida")
+    elif idade <= 7:
+        print("Infantil A")
+    elif idade <= 10:
+        print("Infantil B")
+    elif idade <= 13:
+        print("Juvenil A")
+    elif idade <= 10:
+        print("Juvenil B")
+    else: 
+        print("Sênior")
     ```
 
 10. Elaborar um algoritmo para verificar se um funcionário pode se aposentar, considerando as seguintes condições necessárias: - Condição 1: Se for mulher e estiver com mais de 60 anos; - Condição 2: Se for homem e estiver com mais de 65 anos.
 
     - [Diagrama:](/Parte-2/atividade10.png)  
-    ![Diagrama atividade 10](/Parte-2/atividade10.png)
 
     ```mermaid
     ---
@@ -327,13 +338,20 @@ Inválida: menor que 5 maior 60.
     - [Código atividade 10:](/Parte-2/atividade10.py)
 
     ```python
+    idade = int(input("Idade: "))
+    sexo = input("Sexo [M/F]: ")
 
+    if sexo.lower() == "m" and idade >= 65:
+        print("Pode se aposentar")
+    elif idade >= 60:
+        print("Pode se aposentar")
+    else:
+        print("Não pode se aposentar")
     ```
 
 11. Preparar um algoritmo para ler os valores dos coeficientes a, b e c e imprimir os valores de delta e das raízes reais, quando houver.
 
     - [Diagrama:](/Parte-2/atividade11.png)  
-    ![Diagrama atividade 11](/Parte-2/atividade11.png)
 
     ```mermaid
     ---
@@ -361,9 +379,9 @@ Inválida: menor que 5 maior 60.
             invalido@{shape: display, label: "\"Não possui raizes reais\""}
 
         if{delta < 0}
-        start --> a --> b --> c --> delta --> if
+        start --> a --> b --> c --> delta --> ddelta --> if
         if --> |true| invalido
-        if --> |false| x1 --> x2 --> ddelta --> dx1 --> dx2 --> conector
+        if --> |false| x1 --> x2 --> dx1 --> dx2 --> conector
         invalido --> conector
         conector --> fim
     ```
@@ -371,13 +389,25 @@ Inválida: menor que 5 maior 60.
     - [Código atividade 11:](/Parte-2/atividade11.py)
 
     ```python
+    a = int(input("a: "))
+    b = int(input("b: "))
+    c = int(input("c: "))
 
+    d = b**2-4*a*c
+    print(f"delta: {d}")
+
+    if d < 0:
+        print("Não possui raizes reais. ")
+    else:
+        x1 = (-b + d**(1/2))/(2*a)
+        x2 = (-b - d**(1/2))/(2*a)
+
+        print(f"x1: {x1}\tx2: {x2}")
     ```
 
 12. Escreva um algoritmo para ler as coordenadas (X,Y) de um ponto no sistema cartesiano e escrever o quadrante ao qual o ponto pertence. Se o ponto estiver sobre os eixos, ou na origem, escrever NÃO ESTÁ EM NENHUM QUADRANTE.
 
     - [Diagrama:](/Parte-2/atividade12.png)  
-    ![Diagrama atividade 12](/Parte-2/atividade12.png)
 
     ```mermaid
     ---
@@ -385,7 +415,7 @@ Inválida: menor que 5 maior 60.
     theme: neo-dark  
     title: Atividade 12
     ---
-    flowchart LR
+    flowchart TB
     start([start])
     fim([end])
     conector@{shape: circle, label: " "}
@@ -425,19 +455,30 @@ Inválida: menor que 5 maior 60.
     - [Código atividade 12:](/Parte-2/atividade12.py)
 
     ```python
+    x = int(input("x: "))
+    y = int(input("y: "))
 
+    if x == 0 or y == 0:
+        print("Nenhum quadrante")
+    elif x > 0 and y > 0:
+        print("Está no primeiro quadrante")
+    elif x < 0 and y > 0:
+        print("Está no segundo quadrante")
+    elif x < 0 and y < 0:
+        print("Está no terceiro quadrante")
+    elif x > 0 and y < 0:
+        print("Está no quarto quadrante")
     ```
 
 13. Escreva um algoritmo que leia o valor de 3 ângulos de um triângulo e escreva se o triângulo é acutângulo (possui 3 ângulos agudos), retângulo (possui um ângulo reto) ou obtusângulo (possui um ângulo obtuso).
 
     - [Diagrama:](/Parte-2/atividade13.png)  
-    ![Diagrama atividade 13](/Parte-2/atividade13.png)
 
     ```mermaid
     ---
     title: Atividade 13
     ---
-    flowchart LR
+    flowchart TB
     start([start])
     fim([end])
     conector((" ")) --> fim
@@ -458,7 +499,18 @@ Inválida: menor que 5 maior 60.
     - [Código atividade 13:](/Parte-2/atividade13.py)
 
     ```python
+    a = int(input("a: "))
+    b = int(input("b: "))
+    c = int(input("c: "))
 
+    if (a+b+c != 180):
+        print("Não é triângulo! Soma dos ângulos internos diferente de 180.")
+    elif (a < 180 and a > 90) or (b < 180 and b > 90) or (c < 180 and c > 90):
+        print("Obtuso") 
+    elif a == 90 or b == 90 or c == 90:
+        print("Reto")
+    elif a > 0 or b > 0 or c > 0:
+        print("Agudo")
     ```
 
 14. Escreva um algoritmo para ler o número de lados de um polígono regular. Calcular e imprimir o seguinte:
@@ -469,7 +521,6 @@ Inválida: menor que 5 maior 60.
     e. Caso o número de lados seja superior a 5 escrever POLÍGONO NÃO IDENTIFICADO.
 
     - [Diagrama:](/Parte-2/atividade14.png)  
-    ![Diagrama atividade 14](/Parte-2/atividade14.png)
 
     ```mermaid
     ---
@@ -477,7 +528,7 @@ Inválida: menor que 5 maior 60.
     theme: neo-dark
     title: Atividade 14
     ---
-    flowchart LR
+    flowchart TB
         start([start])
         fim([end])
         conector@{shape: circle, label: " "} --> fim
@@ -506,7 +557,18 @@ Inválida: menor que 5 maior 60.
     - [Código atividade 14:](/Parte-2/atividade14.py)
 
     ```python
+    n = int(input("Número de lados: "))
 
+    if n == 3:
+        print("Triângulo")
+    elif n == 4:
+        print("Quadrado")
+    elif n == 5:
+        print("Pentágono")
+    elif n < 3:
+        print("Não é um polígono")
+    elif n > 5:
+        print("Polígono não identificado")
     ```
 
 15. Construir um algoritmo que leia uma nota na forma quantitativa e escreva sua correspondente qualitativa, de acordo com a tabela abaixo:
@@ -518,7 +580,6 @@ Inválida: menor que 5 maior 60.
         - [8.5; 10] Excelente
 
     - [Diagrama:](/Parte-2/atividade15.png)  
-    ![Diagrama atividade 15](/Parte-2/atividade15.png)
 
     ```mermaid
     ---
@@ -544,5 +605,16 @@ Inválida: menor que 5 maior 60.
     - [Código atividade 15:](/Parte-2/atividade15.py)
 
     ```python
+    nota = float(input("Nota quantitava [0, 10]: "))
 
+    if nota < 2: 
+        print("Sem rendimento")
+    elif nota < 4: 
+        print("Mau")
+    elif nota < 6: 
+        print("Regular")
+    elif nota < 8.5: 
+        print("Bom")
+    else:
+        print("Excelente")
     ```

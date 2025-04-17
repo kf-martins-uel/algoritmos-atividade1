@@ -62,7 +62,10 @@ Faça um único programa com um menu para que se possa escolher qual questão ex
     - [Código atividade 5:](/Parte-3/atividade5.py)
 
     ```python
-
+    print(f"{'Polegadas':<15}{'Centímetros':<20}")
+    for p in range(1, 21):
+       cm = 2.54*p
+       print(f"{p:<15}{cm:<20}")
     ```
 
 6. Entrar com um nome, idade e sexo de 10 pessoas. Imprimir o nome se a pessoa for do sexo masculino e tiver mais de 21 anos.
@@ -71,15 +74,21 @@ Faça um único programa com um menu para que se possa escolher qual questão ex
 
     ```mermaid
     flowchart TB
-            start([start]) --> contador["contador = 1"] --> for{{contador <= 10}} -->|true| nome@{shape:manual-input} --> idade@{shape:manual-input} --> sexo@{shape:manual-input} --> i["contador += 1"]
-            i --> if{"sexo == masculino && idade >= 21"} -->|true| dnome@{shape:display, label:"nome"}
+            start([start]) --> contador["contador = 1"] --> for{{contador <= 10}} -->|true| nome@{shape: manual-input} --> idade@{shape: manual-input} --> sexo@{shape: manual-input} --> i["contador += 1"]
+            i --> if{"sexo == masculino && idade >= 21"} -->|true| dnome@{shape: display, label:"nome"}
             for -->|false| fim([end])
     ```
 
     - [Código atividade 6:](/Parte-3/atividade6.py)
 
     ```python
+    for i in range(10):
+        nome = input("Digite o nome: ") 
+        idade = int(input("Digite a idade: "))
+        sexo = input("Digite o sexo [M, F]: ")
 
+        if sexo.lower() == 'm' and idade >= 21:
+            print(nome)
     ```
 
 7. Ler um número que será o limite superior de um intervalo e o incremento do intervalo(1, 2, 3, etc.). Escrever todos os números naturais no intervalo de 0 até limite superior. Suponha que os dois números lidos são maiores do que zero.
@@ -88,15 +97,18 @@ Faça um único programa com um menu para que se possa escolher qual questão ex
 
     ```mermaid
     flowchart TB
-        start([start]) --> n@{shape:manual-input} --> i@{shape:manual-input} --> contador["c = 0"] --> for{{"c <= n"}}
+        start([start]) --> n@{shape: manual-input} --> i@{shape: manual-input} --> contador["c = 0"] --> for{{"c <= n"}}
         for -->|false| fim([end])
-        for -->|true| display@{shape:display, label:contador} --> inc["contador += i"]
+        for -->|true| display@{shape: display, label:contador} --> inc["contador += i"]
     ```
 
     - [Código atividade 7:](/Parte-3/atividade7.py)
 
     ```python
-
+    n = int(input("Digite o limite superior: "))
+    i = int(input("Digite o incremento: "))
+    for i in range(0, n+1, i):
+        print(i)
     ```
 
 8. Ler um número que será o limite superior de um intervalo e imprimir todos os números ímpares menores que esse número.
@@ -105,15 +117,17 @@ Faça um único programa com um menu para que se possa escolher qual questão ex
 
     ```mermaid
     flowchart TB
-        start([start]) --> n@{shape:manual-input} --> contador["c = 1"] --> for{{"c <= n"}}
+        start([start]) --> n@{shape: manual-input} --> contador["c = 1"] --> for{{"c <= n"}}
         for -->|false| fim([end])
-        for -->|true| if{"contador % 2 == 1"} --> display@{shape:display, label:contador} --> inc["contador += 1"]
+        for -->|true| if{"contador % 2 == 1"} --> display@{shape: display, label:contador} --> inc["contador += 1"]
     ```
 
     - [Código atividade 8:](/Parte-3/atividade8.py)
 
     ```python
-
+    n = int(input("Digite o limite superior: "))
+    for i in range(n+1):
+        print(i if i%2 else ' ', end='')
     ```
 
 9. Ler um número e imprimir todos os números de 1 até o número lido e o seu fatorial.
@@ -123,7 +137,13 @@ Faça um único programa com um menu para que se possa escolher qual questão ex
     - [Código atividade 9:](/Parte-3/atividade9.py)
 
     ```python
-
+    n = int(input("Digite um número: "))
+    print(f"{'Número':<10}{'Fatorial':<13}")
+    for i in range(1, n+1):
+        fat = 1
+        for f in range(i):
+            fat *= (f+1)
+        print(f"{i:<10}{fat:<13}")
     ```
 
 10. Escrever a soma dos números pares entre 25 e 201.
@@ -133,7 +153,13 @@ Faça um único programa com um menu para que se possa escolher qual questão ex
     - [Código atividade 10:](/Parte-3/atividade10.py)
 
     ```python
-
+    # Soma de PA - s = (a1 +a2)*n/2
+    # (201-25)/2 = n
+    # soma = (25+201)*n/2
+    soma = 0
+    for i in range(26, 202, 2):
+        soma += i
+    print(soma)
     ```
 
 11. Ler um número que será o limite superior e um número que será o limite inferior de um intervalo. Imprimir todos os números naturais no intervalo fechado.
@@ -143,7 +169,12 @@ Faça um único programa com um menu para que se possa escolher qual questão ex
     - [Código atividade 11:](/Parte-3/atividade11.py)
 
     ```python
+    s = int(input("Digite o limite superior: "))
+    i = int(input("Digite o limite inferior: "))
 
+    while i <= s:
+        print(i)
+        i+=1
     ```
 
 12. Calcular e escrever uma tabela de graus centígrados em função de graus fahrenheit que variem de 50 a 150 de 1 em 1. A conversão de graus fahrenheit para centígrados é obtida pela equação C = 5/9*(F-32).
@@ -153,6 +184,12 @@ Faça um único programa com um menu para que se possa escolher qual questão ex
     - [Código atividade 12:](/Parte-3/atividade12.py)
 
     ```python
+    print(f"{'Fahrenheit':<12}{'Celsius':<15}")
+    f = 50
+    while f<=150:
+        c = ((f-32)*5)/9
+        print(f"{f:.<12}{c:.2f}")
+        f+=1
 
     ```
 
@@ -163,7 +200,12 @@ Faça um único programa com um menu para que se possa escolher qual questão ex
     - [Código atividade 13:](/Parte-3/atividade13.py)
 
     ```python
-
+    n = int(input("Digite um número: "))
+    h = 0
+    while n>=1:
+        h+= 1/n
+        n-=1
+    print(h)
     ```  
 
 14. Faça um algoritmo que leia o nome, altura, sexo (M – masculino, F – feminino) e cor dos olhos (A – azuis, V – verdes, C – castanhos) para um conjunto de 15 pessoas. O algoritmo deve calcular e escrever:
@@ -176,5 +218,16 @@ Faça um único programa com um menu para que se possa escolher qual questão ex
     - [Código atividade 14:](/Parte-3/atividade14.py)
 
     ```python
-
+    n = hc = mi = m = 0
+    for i in range(15):
+        nome = input("Digite o nome: ")
+        altura = float(input("Digite a alura: "))
+        sexo = input("Digite o sexo [m,f]: ")
+        olhos = input("Digite a cor dos olhos (c - castanhos; a - azuis; v - verdes): ")
+        if sexo.lower() == 'm' and olhos.lower() == 'c':
+            hc+=1
+        elif sexo.lower() == 'f':
+            m+=1
+            mi += 1 if altura<1.6 else 0
+    print(f"Total de homens com olhos castanhos: {hc}\nTotal de mulheres: {m}\nTotal de mulheres com altura menor que 1.60m: {mi}")
     ```

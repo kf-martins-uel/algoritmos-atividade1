@@ -1,4 +1,4 @@
-# Atividade 1 de Algoritimo
+# Atividade 1 de Algoritmos
 
 - Professor: Anderson
 - Atividade dividida em 3 partes.
